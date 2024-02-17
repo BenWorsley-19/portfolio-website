@@ -1,15 +1,18 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { Hero, Navbar } from './components';
+import { Hero, Navbar, Projects, About, Experience } from './components';
 
 const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar />
       <div className="flex min-h-screen w-screen flex-col bg-[#F2F2F2]">
-        <div className='container mt-24 mx-auto px-12 py-4'>
+        <Navbar />
+        <div className='container mt-24 mx-auto py-4 px-12'>
           <Hero />
+          <About />
+          <Projects />
+          <Experience />
         </div>
       </div>
     </BrowserRouter>
