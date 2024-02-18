@@ -4,8 +4,8 @@ import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
     return (
-        <section className='h-screen'>
-            <div className="grid grid-cols-1 sm:grid-cols-12  mb-6 lg:mb-10">
+        <div className='h-[85vh]'>
+            <div className="grid grid-cols-1 sm:grid-cols-12 lg:my-16 mb-6 lg:mb-10">
                 <div className="lg:col-span-7 place-self-center mb-6 lg:mb-10 text-center sm:text-left">
                     <h1 className="mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal">
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#7defaae9] to-[#007EA7]'>Hello, I&apos;m{" "}</span>
@@ -41,7 +41,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-wrap gap-2 md:gap-3 lg:gap-4 lg:pt-10 items-center justify-center'>
+            <div className='flex flex-wrap gap-2 md:gap-3 lg:gap-4 lg:pt-16 items-center justify-center'>
                 <div className='bg-gradient-to-br from-[#cfe8d9] to-[#A9D8F7] h-16 p-1 w-80'>
                     <div className='h-full w-full bg-[#F2F2F2] flex justify-center items-center'>
                         <p className='text-center text-lg text-[#121212]'>
@@ -64,7 +64,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 
