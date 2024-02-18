@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
+import Skill from './Skill';
 
 
 const About = () => {
@@ -11,7 +12,7 @@ const About = () => {
             </h2>
             <motion.div
                 variants={fadeIn("", "", 0.1, 1)}
-                className='mt-4 text-secondary text-[17px] leading-[30px]'
+                className='mt-4 text-[#121212] text-[17px] leading-[30px]'
             >
                 <p className='mb-4'>
                 So! a brief career summary goes like this... I started my career through the apprenticeship route with a company called Bright Future Software which offered to pay for my degree. 3 years later
@@ -21,9 +22,13 @@ const About = () => {
                 <p className='mb-4'>
                 That level of growth afforded me the opportunity to grow with it. I have been able to take on various roles and challenges in my time at Matillion that ranged from very technical to very people focused.
                 In that time I have taken services live as one of Matillion's first SAAS offerings, created local development platforms based on kubernetes, built engineering frameworks to deliver connectors for the business, managed and grown a team
-                of 2 to a pod of 30+ engineers through Covid, and defined and implemented key engineering processes from tech test and recruitment plans to career development frameworks. For more detail on these skip ahead to the career section!
+                of 2 to a pod of 30+ engineers through Covid, and defined and implemented key engineering processes from tech test and recruitment plans to career development frameworks.  
+                </p>
+                <p className='mb-4'>
+                The following are some of the core skills I apply to my work.
                 </p>
             </motion.div>
+            <Skill />
         </>
     )
 }
