@@ -15,6 +15,36 @@ const experiences = [
       "Worked with DevX and collaborated with dev teams to understand requirements to spin up their services.",
       "80% faster test cycles for developers.",
     ],
+    tags: [
+      {
+        name: "Python",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Kubernetes",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "ArgoCD",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Terraform",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Docker",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "CircleCI",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Agile/Scrum",
+        color: "text-[#E6272A]",
+      },
+    ],
   },
   {
     title: "Create Your Own Connector (CYOC)",
@@ -27,6 +57,40 @@ const experiences = [
       "Collaborated with Product team on customer interviews to define requirements.",
       "Enabled users to create 40 connectors in one quarter, from one connector",
     ],
+    tags: [
+      {
+        name: "Java",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Spring",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "React",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Postgres",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Docker",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "CircleCI",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Microservices",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Agile/Scrum",
+        color: "text-[#E6272A]",
+      },
+    ],
   },
   {
     title: "Engineering Manager",
@@ -38,6 +102,7 @@ const experiences = [
       "Implemented career development framework, defining the roles of engineer, senior and staff.",
       "Championed Diversity and Inclusion initiatives, including attending Women in Tech conference on behalf of Matillion.",
     ],
+    tags: []
   },
   {
     title: "Custom Connector Framework",
@@ -49,12 +114,29 @@ const experiences = [
       "Tactical move away from reliance on third party.",
       "Enabled 30 percent faster support requests.",
     ],
+    tags: [
+      {
+        name: "Java",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "CircleCI",
+        color: "text-[#E6272A]",
+      },
+      {
+        name: "Agile/Kanban",
+        color: "text-[#E6272A]",
+      },
+    ],
   },
 ];
 
 
-const ExperienceCard = ({ experience }) => (
-  <ol className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'>
+const ExperienceCard = ({ index, experience }) => (
+  <motion.ol 
+    variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'
+  >
     <li className='mb-10 ml-4'>
       <div className='absolute w-4 h-4 bg-[#8b8b8b] rounded-full mt-3.5 -left-2 border border-white' />
       <div className='w-full bg-gradient-to-br from-[#cfe8d9] to-[#A9D8F7] rounded-2xl p-4'>
@@ -75,9 +157,16 @@ const ExperienceCard = ({ experience }) => (
             </li>
           ))}
         </ul>
+        <div className='mt-4 flex flex-wrap gap-2'>
+          {experience.tags.map((tag) => (
+            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+              #{tag.name}
+            </p>
+          ))}
+        </div>
       </div>
     </li>
-  </ol>
+  </motion.ol>
 );
 
 const Experience = () => {
@@ -87,17 +176,18 @@ const Experience = () => {
         Experience
       </h2>
       <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-30 text-[17px] text-[#121212] leading-[30px]'
-        >
+        <p className='mt-30 text-[17px] text-[#121212] leading-[30px]'>
           The following are some of the projects, experiences  and initiatives from my career.
-        </motion.p>
+        </p>
       </div>
       <div className="my-10 flex flex-row items-center justify-center">
         <div className="w-full md:w-7/12">
           {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} />
+            <ExperienceCard 
+              key={index} 
+              index={index} 
+              experience={experience} 
+            />
           ))}
         </div>
       </div>

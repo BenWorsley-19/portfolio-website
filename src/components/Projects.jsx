@@ -126,12 +126,9 @@ const Projects = () => {
           My Projects
         </h2>
         <div className='w-full flex'>
-          <motion.p
-            variants={fadeIn("", "", 0.1, 1)}
-            className='mt-30 text-[17px] leading-[30px]'
-          >
+          <p className='mt-30 text-[17px] leading-[30px]'>
             The following are side projects I've made with the intention of leraning a new technology or just to have a little fun.
-          </motion.p>  
+          </p>  
         </div>
         <div className='grid md:grid-cols-2 lg:grid-cols-3'>
           {projectDefinitions.map((project, index) => (
