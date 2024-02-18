@@ -94,7 +94,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             alt={name}
             className='w-full h-full object-cover rounded-2xl'
           />
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+          <div className='absolute inset-0 flex justify-end m-3'>
             <div 
               onClick={() => window.open(source_code_link, "_blank")}
               className='bg-[#6b6c6b] w-9 h-9 rounded-full flex justify-center items-center cursor-pointer'  

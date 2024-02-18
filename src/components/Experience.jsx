@@ -1,73 +1,83 @@
+import { motion } from 'framer-motion';
+import { fadeIn } from '../utils/motion';
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import 'react-vertical-timeline-component/style.min.css';
 import { SectionWrapper } from "../hoc";
 
 
 const experiences = [
-    {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      iconBg: "#383E56",
-      date: "March 2020 - April 2021",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-  ];
+  {
+    title: "Matillion Application Kubernetes Environment Runner (MAKER)",
+    company_name: "Matillion",
+    date: "23-24",
+    points: [
+      "Internal CLI tool to spin up a local kubernetes environment for development and testing.",
+      "Worked with DevX and collaborated with dev teams to understand requirements to spin up their services.",
+      "80% faster test cycles for developers.",
+    ],
+  },
+  {
+    title: "Create Your Own Connector (CYOC)",
+    company_name: "Matillion",
+    date: "21-23",
+    points: [
+      "Service with UI to describe source API's and generate a connector.",
+      "Early service in Matillion's Data Producitivy Cloud.",
+      "Nominated for Most Innovative Cloud Product or Service at Cloud Excellence Awards",
+      "Collaborated with Product team on customer interviews to define requirements.",
+      "Enabled users to create 40 connectors in one quarter, from one connector",
+    ],
+  },
+  {
+    title: "Engineering Manager",
+    company_name: "Matillion",
+    date: "19-21",
+    points: [
+      "Managed and grew a team of 2 to a pod of 30+ engineers with 4 Team Lead reports through Covid.",
+      "Grew Engineering team from 20 to 100+ through recruitment intiatives, including tech tests and interview standards.",
+      "Implemented career development framework, defining the roles of engineer, senior and staff.",
+      "Championed Diversity and Inclusion initiatives, including attending Women in Tech conference on behalf of Matillion.",
+    ],
+  },
+  {
+    title: "Custom Connector Framework",
+    company_name: "Matillion",
+    date: "17-19",
+    points: [
+      "Framework to retrieve data from a defined source to Cloud Data Warehouse via config and http calls.",
+      "Improved test cycle from 2 weeks to 2 days.",
+      "Tactical move away from reliance on third party.",
+      "Enabled 30 percent faster support requests.",
+    ],
+  },
+];
 
 
 const ExperienceCard = ({ experience }) => (
-  <VerticalTimelineElement
-    contentStyle={{ background: '#1d1846', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #232631' }}
-    date={experience.date}
-    iconStyle={{ background: experience.iconBg }}
-    icon={
-      <div className="flex justify-center items-center w-full h-full">
+  <ol className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'>
+    <li className='mb-10 ml-4'>
+      <div className='absolute w-4 h-4 bg-[#8b8b8b] rounded-full mt-3.5 -left-2 border border-white' />
+      <div className='w-full bg-gradient-to-br from-[#cfe8d9] to-[#A9D8F7] rounded-2xl p-4'>
+        <div className='grid grid-row-2 gap-4 items-center justify-start'>
+          <span className='text-[#121212] text-xs md:text-s '>
+            {experience.date} - {experience.company_name}
+          </span>
+          <h3 className='text-[#121212] font-bold text-[24px]'>
+            {experience.title}
+          </h3>
+        </div>
+        <ul className="mt-5 list-disc ml-5 space-y-2">
+          {experience.points.map((point, index) => (
+            <li
+              key={`experience-point-${index}`}
+              className="text-[#121212] text-[14px] pl-1 tracking-wider">
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
-    }
-  >
-    <div>
-      <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-      <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>{experience.company_name}</p>
-    </div>
-    <ul className="mt-5 list-disc ml-5 space-y-2">
-      {experience.points.map((point, index) => (
-        <li  
-          key={`experience-point-${index}`} 
-          className="text-white-100 text-[14px] pl-1 tracking-wider">
-          {point}
-        </li>
-      ))}
-    </ul>
-  </VerticalTimelineElement>
+    </li>
+  </ol>
 );
 
 const Experience = () => {
@@ -76,12 +86,20 @@ const Experience = () => {
       <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#7defaae9] to-[#007EA7] md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
         Experience
       </h2>
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
+      <div className='w-full flex'>
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className='mt-30 text-[17px] text-[#121212] leading-[30px]'
+        >
+          The following are some of the projects, experiences  and initiatives from my career.
+        </motion.p>
+      </div>
+      <div className="my-10 flex flex-row items-center justify-center">
+        <div className="w-full md:w-7/12">
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}
-        </VerticalTimeline>
+        </div>
       </div>
     </>
   )

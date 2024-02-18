@@ -10,6 +10,7 @@ function HOC() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
+            className='m:py-16 py-10'
         >
             <span className='hash-span' id={idName}>
                 &nbsp;
