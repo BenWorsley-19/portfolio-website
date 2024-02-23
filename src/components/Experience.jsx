@@ -10,10 +10,10 @@ const experiences = [
     company_name: "Matillion",
     date: "23-24",
     points: [
-      "Internal CLI tool to spin up a local kubernetes environment for development and testing.",
-      "Harnecceses ArgoCD and Helm Charts of services of Matillion's Data Productivity Cloud to spin up required infra.",
+      "Internal CLI tool to spin up a local Kubernetes cluster for full Data Productivity Cloud stack.",
+      "85% faster test cycles for developers.",
+      "Utilises ArgoCD appsets and Helm Charts of services in Matillion's Data Productivity Cloud to spin up required infra.",
       "Worked with DevX and collaborated with dev teams to understand requirements to spin up their services.",
-      "80% faster test cycles for developers.",
     ],
     tags: [
       {
@@ -51,11 +51,11 @@ const experiences = [
     company_name: "Matillion",
     date: "21-23",
     points: [
-      "Service with UI to describe source API's and generate a connector.",
-      "Early service in Matillion's Data Producitivy Cloud.",
-      "Nominated for Most Innovative Cloud Product or Service at Cloud Excellence Awards",
-      "Collaborated with Product team on customer interviews to define requirements.",
-      "Enabled users to create 40 connectors in one quarter, from one connector",
+      "React and Java Spring Boot SaaS application which enables users to pull data from any REST API through executing API Requests based on user provided configuration.",
+      "Nominated for Most Innovative Cloud Product or Service at Cloud Excellence Awards.",
+      "Enabled users to create 40 connectors in one quarter, from one connector.",
+      "Reimagined monolith feature of AMI product into SAAS Micro-service and library based architecture.",
+      "Liaised with key stakeholders, acting as bridge between technical discussion to Product Roadmap ",
     ],
     tags: [
       {
@@ -97,9 +97,9 @@ const experiences = [
     company_name: "Matillion",
     date: "19-21",
     points: [
-      "Managed and grew a team of 2 to a pod of 30+ engineers with 4 Team Lead reports through Covid.",
-      "Grew Engineering team from 20 to 100+ through recruitment initiatives,  defining tech tests and interview standards.",
-      "Implemented career development framework, defining the roles of engineer, senior and staff.",
+      "Managed pod of 30+ multi-disciplined people with 4 Team Leaders as direct reports through the pandemic.",
+      "Grew Engineering team from 20 to 100+ through recruitment initiatives, including defining tech tests and interview standards.",
+      "Produced and continually refined Career Progression framework for Engineering department, defining the roles of engineer, senior and staff.",
       "Championed Diversity and Inclusion initiatives, including attending Women in Tech conference on behalf of Matillion.",
     ],
     tags: []
@@ -110,7 +110,7 @@ const experiences = [
     date: "17-19",
     points: [
       "Framework to stream data from a defined source to Cloud Data Warehouse via config and http calls.",
-      "Improved test cycle from 2 weeks to 2 days.",
+      "Improved test cycle from 2 weeks to 2 days with previous third party software.",
       "Tactical move away from reliance on third party.",
       "Enabled 30 percent faster support requests.",
     ],
