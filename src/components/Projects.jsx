@@ -42,7 +42,7 @@ const projectDefinitions = [
     {
       name: "Music Enterprise",
       description:
-        "I put this together so to provide an example of an enterprise-like codebase with regards to OO design and styles of tests to my friends who do not much experience working in large codebases.",
+        "I made this to provide an example of an enterprise-like codebase with regards to OO design and styles of tests to my friends who do not have much experience working in large codebases.",
       tags: [
         {
           name: "java",

@@ -15,9 +15,9 @@ const About = () => {
                 className='mt-4 text-[#121212] text-[17px] leading-[30px]'
             >
                 <p className='mb-4'>
-                So! a brief career summary goes like this... I started my career through the apprenticeship route with a company called Bright Future Software which offered to pay for my degree. 3 years later
-                that company went bust and I was left to figure out what was next for me. Fortunately, that turned out to be one of the best things to happen as I found a start up called <a href="https://www.matillion.com/" target="_blank" className='text-[#007EA7] hover:underline'>Matillion</a>.
-                I joined a business of around 12 people as the second full time engineer which 8 years later is now a rare Unicorn company with over 600 employees.
+                So! A brief career summary goes like this... I started my career through the apprenticeship route with a company called Bright Future Software which offered to pay for my degree. Unfortunately, 3 years later
+                that company went bust and I was left to figure out what was next for me. Looking back now, that turned out to be a great stroke of luck as from there I found a startup called <a href="https://www.matillion.com/" target="_blank" className='text-[#007EA7] hover:underline'>Matillion</a>.
+                I joined a business of around 12 people as the second full time engineer and 8 years on from that, I have seen Matillion transition to and through a Unicorn company of over 600 employees.
                 </p>
                 <p className='mb-4'>
                 That level of growth afforded me the opportunity to grow with it. I have been able to take on various roles and challenges in my time at Matillion that ranged from very technical to very people focused.

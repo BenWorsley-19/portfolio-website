@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import 'react-vertical-timeline-component/style.min.css';
 import { SectionWrapper } from "../hoc";
 
@@ -12,6 +11,7 @@ const experiences = [
     date: "23-24",
     points: [
       "Internal CLI tool to spin up a local kubernetes environment for development and testing.",
+      "Harnecceses ArgoCD and Helm Charts of services of Matillion's Data Productivity Cloud to spin up required infra.",
       "Worked with DevX and collaborated with dev teams to understand requirements to spin up their services.",
       "80% faster test cycles for developers.",
     ],
@@ -79,7 +79,7 @@ const experiences = [
         color: "text-[#E6272A]",
       },
       {
-        name: "CircleCI",
+        name: "Bitbucket Pipelines",
         color: "text-[#E6272A]",
       },
       {
@@ -98,7 +98,7 @@ const experiences = [
     date: "19-21",
     points: [
       "Managed and grew a team of 2 to a pod of 30+ engineers with 4 Team Lead reports through Covid.",
-      "Grew Engineering team from 20 to 100+ through recruitment intiatives, including tech tests and interview standards.",
+      "Grew Engineering team from 20 to 100+ through recruitment initiatives,  defining tech tests and interview standards.",
       "Implemented career development framework, defining the roles of engineer, senior and staff.",
       "Championed Diversity and Inclusion initiatives, including attending Women in Tech conference on behalf of Matillion.",
     ],
@@ -109,7 +109,7 @@ const experiences = [
     company_name: "Matillion",
     date: "17-19",
     points: [
-      "Framework to retrieve data from a defined source to Cloud Data Warehouse via config and http calls.",
+      "Framework to stream data from a defined source to Cloud Data Warehouse via config and http calls.",
       "Improved test cycle from 2 weeks to 2 days.",
       "Tactical move away from reliance on third party.",
       "Enabled 30 percent faster support requests.",
@@ -120,7 +120,7 @@ const experiences = [
         color: "text-[#E6272A]",
       },
       {
-        name: "CircleCI",
+        name: "Bitbucket Pipelines",
         color: "text-[#E6272A]",
       },
       {
@@ -177,7 +177,7 @@ const Experience = () => {
       </h2>
       <div className='w-full flex'>
         <p className='mt-30 text-[17px] text-[#121212] leading-[30px]'>
-          The following are some of the projects, experiences  and initiatives from my career.
+          The following are some of the projects, experiences  and initiatives from my career. For more, please reach out for my CV.
         </p>
       </div>
       <div className="my-10 flex flex-row items-center justify-center">

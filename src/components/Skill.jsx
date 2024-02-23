@@ -4,27 +4,32 @@ import { fadeIn } from '../utils/motion';
 const skills = [
     {
         title: "OO Design",
-        rating: "7 Years",
+        rating: "Confident",
         percentage: "90%",
     },
     {
         title: "People Management",
-        rating: "4 Years",
+        rating: "Confident",
         percentage: "90%",
     },
     {
       title: "Java",
-      rating: "7 Years",
+      rating: "Confident",
       percentage: "90%",
     },
     {
+        title: "Mentoring",
+        rating: "Confident",
+        percentage: "90%",
+      },
+    {
         title: "Python",
-        rating: "2 Years",
+        rating: "Strong",
         percentage: "70%",
     },
     {
         title: "Js/React",
-        rating: "4 Years",
+        rating: "Capable",
         percentage: "50%",
     },
   ];
