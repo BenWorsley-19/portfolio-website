@@ -127,7 +127,7 @@ const Projects = () => {
         </h2>
         <div className='w-full flex'>
           <p className='mt-30 text-[17px] leading-[30px]'>
-            The following are side projects I've made with the intention of leraning a new technology or just to have a little fun.
+            The following are side projects I've made with the intention of learning a new technology or just to have a little fun.
           </p>  
         </div>
         <div className='grid md:grid-cols-2 lg:grid-cols-3'>
