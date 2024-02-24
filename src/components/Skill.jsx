@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { fadeIn } from '../utils/motion';
+import { fadeIn, zoomIn } from '../utils/motion';
 
 const skills = [
     {
@@ -44,7 +44,7 @@ const SkillChart = () => {
                 <div className='w-full flex flex-col gap-4'>
                     {skills.map((skill, index) => (
                         <motion.div
-                            variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+                            variants={zoomIn(index * 0.5, 0.75)}
                             key={skill.title}
                             className='w-full flex justify-center mt-2'
                         >

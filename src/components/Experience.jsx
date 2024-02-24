@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { fadeIn } from '../utils/motion';
+import { slideIn } from '../utils/motion';
 import 'react-vertical-timeline-component/style.min.css';
 import { SectionWrapper } from "../hoc";
 
@@ -134,7 +134,7 @@ const experiences = [
 
 const ExperienceCard = ({ index, experience }) => (
   <motion.ol 
-    variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    variants={slideIn("up", "spring", index * 0.5, 0.75)}
     className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'
   >
     <li className='mb-10 ml-4'>
@@ -177,7 +177,7 @@ const Experience = () => {
       </h2>
       <div className='w-full flex'>
         <p className='mt-30 text-[17px] text-[#121212] leading-[30px]'>
-          The following are some of the projects, experiences  and initiatives from my career. For more, please reach out for my CV.
+          The following are some of the projects, experiences and initiatives from my career.
         </p>
       </div>
       <div className="my-10 flex flex-row items-center justify-center">
@@ -191,6 +191,9 @@ const Experience = () => {
           ))}
         </div>
       </div>
+      <p className='text-[17px] text-[#121212] text-center'>
+          For more, please reach out for my CV via <a href="https://www.linkedin.com/in/benworsley/" target="_blank" className='text-[#007EA7] hover:underline'>LinkedIn</a>.
+      </p>
     </>
   )
 }
