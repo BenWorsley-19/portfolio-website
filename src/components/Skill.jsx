@@ -28,7 +28,7 @@ const skills = [
         percentage: "70%",
     },
     {
-        title: "Js/React",
+        title: "JavaScript/React",
         rating: "Capable",
         percentage: "50%",
     },

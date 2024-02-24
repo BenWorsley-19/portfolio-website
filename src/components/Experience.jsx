@@ -53,7 +53,7 @@ const experiences = [
     points: [
       "React and Java Spring Boot SaaS application which enables users to pull data from any REST API through executing API Requests based on user provided configuration.",
       "Nominated for Most Innovative Cloud Product or Service at Cloud Excellence Awards.",
-      "Enabled users to create 40 connectors in one quarter, from one connector.",
+      "Enabled users to create 40 connectors in one quarter, from one connector the previous.",
       "Reimagined monolith feature of AMI product into SAAS Micro-service and library based architecture.",
       "Liaised with key stakeholders, acting as bridge between technical discussion to Product Roadmap ",
     ],
@@ -79,7 +79,7 @@ const experiences = [
         color: "text-[#E6272A]",
       },
       {
-        name: "Bitbucket Pipelines",
+        name: "BitbucketPipelines",
         color: "text-[#E6272A]",
       },
       {
@@ -120,7 +120,7 @@ const experiences = [
         color: "text-[#E6272A]",
       },
       {
-        name: "Bitbucket Pipelines",
+        name: "BitbucketPipelines",
         color: "text-[#E6272A]",
       },
       {

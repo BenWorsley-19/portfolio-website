@@ -55,7 +55,7 @@ const projectDefinitions = [
     {
       name: "3D Space Visual",
       description:
-        "This was the result of me expiermenting with Three.js and creating 3D graphics with Blender.",
+        "This was the result of me experimenting with Three.js and creating 3D graphics with Blender.",
       tags: [
         {
           name: "React",
