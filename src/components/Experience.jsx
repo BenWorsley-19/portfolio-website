@@ -133,9 +133,6 @@ const experiences = [
 
 
 const ExperienceCard = ({ index, experience }) => (
-  <motion.div
-    variants={slideIn("up", "spring", index * 0.5, 0.75)}
-  >
     <ol className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'>
       <li className='mb-10 ml-4'>
         <div className='absolute w-4 h-4 bg-[#8b8b8b] rounded-full mt-3.5 -left-2 border border-white' />
@@ -167,7 +164,6 @@ const ExperienceCard = ({ index, experience }) => (
         </div>
       </li>
     </ol>
-  </motion.div>
 );
 
 const Experience = () => {
