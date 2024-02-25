@@ -133,40 +133,41 @@ const experiences = [
 
 
 const ExperienceCard = ({ index, experience }) => (
-  <motion.ol 
+  <motion.div
     variants={slideIn("up", "spring", index * 0.5, 0.75)}
-    className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'
   >
-    <li className='mb-10 ml-4'>
-      <div className='absolute w-4 h-4 bg-[#8b8b8b] rounded-full mt-3.5 -left-2 border border-white' />
-      <div className='w-full bg-gradient-to-br from-[#cfe8d9] to-[#A9D8F7] rounded-2xl p-4'>
-        <div className='grid grid-row-2 gap-4 items-center justify-start'>
-          <span className='text-[#121212] text-xs md:text-s '>
-            {experience.date} - {experience.company_name}
-          </span>
-          <h3 className='text-[#121212] font-bold text-[24px]'>
-            {experience.title}
-          </h3>
+    <ol className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'>
+      <li className='mb-10 ml-4'>
+        <div className='absolute w-4 h-4 bg-[#8b8b8b] rounded-full mt-3.5 -left-2 border border-white' />
+        <div className='w-full bg-gradient-to-br from-[#cfe8d9] to-[#A9D8F7] rounded-2xl p-4'>
+          <div className='grid grid-row-2 gap-4 items-center justify-start'>
+            <span className='text-[#121212] text-xs md:text-s '>
+              {experience.date} - {experience.company_name}
+            </span>
+            <h3 className='text-[#121212] font-bold text-[24px]'>
+              {experience.title}
+            </h3>
+          </div>
+          <ul className="mt-5 list-disc ml-5 space-y-2">
+            {experience.points.map((point, index) => (
+              <li
+                key={`experience-point-${index}`}
+                className="text-[#121212] text-[14px] pl-1 tracking-wider">
+                {point}
+              </li>
+            ))}
+          </ul>
+          <div className='mt-4 flex flex-wrap gap-2'>
+            {experience.tags.map((tag) => (
+              <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                #{tag.name}
+              </p>
+            ))}
+          </div>
         </div>
-        <ul className="mt-5 list-disc ml-5 space-y-2">
-          {experience.points.map((point, index) => (
-            <li
-              key={`experience-point-${index}`}
-              className="text-[#121212] text-[14px] pl-1 tracking-wider">
-              {point}
-            </li>
-          ))}
-        </ul>
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {experience.tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
-            </p>
-          ))}
-        </div>
-      </div>
-    </li>
-  </motion.ol>
+      </li>
+    </ol>
+  </motion.div>
 );
 
 const Experience = () => {
@@ -183,16 +184,16 @@ const Experience = () => {
       <div className="my-10 flex flex-row items-center justify-center">
         <div className="w-full md:w-7/12">
           {experiences.map((experience, index) => (
-            <ExperienceCard 
-              key={index} 
-              index={index} 
-              experience={experience} 
+            <ExperienceCard
+              key={index}
+              index={index}
+              experience={experience}
             />
           ))}
         </div>
       </div>
       <p className='text-[17px] text-[#121212] text-center'>
-          For more, please reach out for my CV via <a href="https://www.linkedin.com/in/benworsley/" target="_blank" className='text-[#007EA7] hover:underline'>LinkedIn</a>.
+        For more, please reach out for my CV via <a href="https://www.linkedin.com/in/benworsley/" target="_blank" className='text-[#007EA7] hover:underline'>LinkedIn</a>.
       </p>
     </>
   )
