@@ -18,33 +18,34 @@ const experiences = [
     tags: [
       {
         name: "Python",
-        color: "text-[#E6272A]",
+        color: "text-yellow-500",
       },
       {
         name: "Kubernetes",
-        color: "text-[#E6272A]",
+        color: "text-blue-500",
       },
       {
         name: "ArgoCD",
-        color: "text-[#E6272A]",
+        color: "text-orange-500",
       },
       {
         name: "Terraform",
-        color: "text-[#E6272A]",
+        color: "text-purple-500",
       },
       {
         name: "Docker",
-        color: "text-[#E6272A]",
+        color: "text-cyan-500",
       },
       {
         name: "CircleCI",
-        color: "text-[#E6272A]",
+        color: "text-sky-500",
       },
       {
         name: "Agile/Scrum",
-        color: "text-[#E6272A]",
+        color: "text-pink-500",
       },
     ],
+    icon: "🚀"
   },
   {
     title: "Create Your Own Connector (CYOC)",
@@ -60,37 +61,38 @@ const experiences = [
     tags: [
       {
         name: "Java",
-        color: "text-[#E6272A]",
+        color: "text-orange-500",
       },
       {
         name: "Spring",
-        color: "text-[#E6272A]",
+        color: "text-sky-500",
       },
       {
         name: "React",
-        color: "text-[#E6272A]",
+        color: "text-blue-500",
       },
       {
         name: "Postgres",
-        color: "text-[#E6272A]",
+        color: "text-indigo-500",
       },
       {
         name: "Docker",
-        color: "text-[#E6272A]",
+        color: "text-cyan-500",
       },
       {
         name: "BitbucketPipelines",
-        color: "text-[#E6272A]",
+        color: "text-purple-500",
       },
       {
         name: "Microservices",
-        color: "text-[#E6272A]",
+        color: "text-red-500",
       },
       {
         name: "Agile/Scrum",
-        color: "text-[#E6272A]",
+        color: "text-pink-500",
       },
     ],
+    icon: "🔧"
   },
   {
     title: "Engineering Manager",
@@ -102,7 +104,8 @@ const experiences = [
       "Produced and continually refined Career Progression framework for Engineering department, defining the roles of engineer, senior and staff.",
       "Championed Diversity and Inclusion initiatives, including attending Women in Tech conference on behalf of Matillion.",
     ],
-    tags: []
+    tags: [],
+    icon: "👥"
   },
   {
     title: "Custom Connector Framework",
@@ -117,68 +120,106 @@ const experiences = [
     tags: [
       {
         name: "Java",
-        color: "text-[#E6272A]",
+        color: "text-orange-500",
       },
       {
         name: "BitbucketPipelines",
-        color: "text-[#E6272A]",
+        color: "text-purple-500",
       },
       {
         name: "Agile/Kanban",
-        color: "text-[#E6272A]",
+        color: "text-pink-500",
       },
     ],
+    icon: "⚙️"
   },
 ];
 
 
 const ExperienceCard = ({ index, experience }) => (
-    <ol className='flex flex-col md:flex-row relative border-l border-[#8b8b8b]'>
-      <li className='mb-10 ml-4'>
-        <div className='absolute w-4 h-4 bg-[#8b8b8b] rounded-full mt-3.5 -left-2 border border-white' />
-        <div className='w-full bg-gradient-to-br from-[#cfe8d9] to-[#A9D8F7] rounded-2xl p-4'>
-          <div className='grid grid-row-2 gap-4 items-center justify-start'>
-            <span className='text-[#121212] text-xs md:text-s '>
-              {experience.date} - {experience.company_name}
-            </span>
-            <h3 className='text-[#121212] font-bold text-[24px]'>
-              {experience.title}
-            </h3>
+    <motion.div 
+      variants={slideIn("left", "tween", index * 0.2, 0.75)}
+      className='relative group w-full'
+    >
+      <div className='flex items-start mb-12 w-full'>
+        {/* Timeline dot and line */}
+        <div className='flex flex-col items-center mr-8 flex-shrink-0'>
+          <div className='flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110'>
+            <span className='text-white text-xl'>{experience.icon}</span>
           </div>
-          <ul className="mt-5 list-disc ml-5 space-y-2">
-            {experience.points.map((point, index) => (
-              <li
-                key={`experience-point-${index}`}
-                className="text-[#121212] text-[14px] pl-1 tracking-wider">
-                {point}
-              </li>
-            ))}
-          </ul>
-          <div className='mt-4 flex flex-wrap gap-2'>
-            {experience.tags.map((tag) => (
-              <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-                #{tag.name}
-              </p>
-            ))}
+          {index < experiences.length - 1 && (
+            <div className='w-0.5 h-20 bg-gradient-to-b from-sky-500 to-cyan-500 mt-4'></div>
+          )}
+        </div>
+        
+        {/* Content card */}
+        <div className='flex-1 w-full'>
+          {/* Glow effect */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-400 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+          
+          {/* Main card */}
+          <div className='relative backdrop-blur-md bg-white/60 border border-white/30 rounded-3xl p-6 lg:p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.01] w-full'>
+            <div className='mb-6'>
+              <div className='flex flex-wrap items-center justify-between mb-4'>
+                <span className='inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-sky-100 to-cyan-100 text-sky-800 border border-sky-200'>
+                  {experience.date} • {experience.company_name}
+                </span>
+              </div>
+              <h3 className='text-gray-800 font-bold text-xl lg:text-2xl mb-4 group-hover:text-sky-500 transition-colors duration-300'>
+                {experience.title}
+              </h3>
+            </div>
+            
+            <ul className="space-y-3 mb-6">
+              {experience.points.map((point, pointIndex) => (
+                <li
+                  key={`experience-point-${pointIndex}`}
+                  className="flex items-start text-gray-700 text-sm lg:text-base leading-relaxed">
+                  <span className="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full mt-2 mr-3"></span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            
+            {experience.tags.length > 0 && (
+              <div className='flex flex-wrap gap-2'>
+                {experience.tags.map((tag) => (
+                  <span 
+                    key={tag.name} 
+                    className={`px-3 py-1 text-xs lg:text-sm font-semibold ${tag.color} bg-white/60 backdrop-blur-sm rounded-full border border-white/30 hover:scale-105 transition-transform duration-200`}
+                  >
+                    #{tag.name}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
-      </li>
-    </ol>
+      </div>
+    </motion.div>
 );
 
 const Experience = () => {
   return (
-    <>
-      <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#7defaae9] to-[#007EA7] md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
-        Experience
-      </h2>
-      <div className='w-full flex'>
-        <p className='mt-30 text-[17px] text-[#121212] leading-[30px]'>
+    <div className="relative w-full">
+      {/* Background decoration */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 right-1/4 w-48 h-48 bg-gradient-to-r from-sky-300 to-cyan-300 rounded-full opacity-20 blur-2xl"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-40 h-40 bg-gradient-to-r from-blue-300 to-sky-300 rounded-full opacity-20 blur-2xl"></div>
+      </div>
+      
+      <div className="text-center mb-16">
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-400 md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-bold mb-4">
+          Experience
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
+        <p className='text-gray-600 text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto'>
           The following are some of the projects, experiences and initiatives from my career.
         </p>
       </div>
-      <div className="my-10 flex flex-row items-center justify-center">
-        <div className="w-full md:w-7/12">
+      
+      <div className="w-full max-w-5xl mx-auto px-4 lg:px-8">
+        <div className="relative">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={index}
@@ -188,10 +229,23 @@ const Experience = () => {
           ))}
         </div>
       </div>
-      <p className='text-[17px] text-[#121212] text-center'>
-        For more, please reach out for my CV via <a href="https://www.linkedin.com/in/benworsley/" target="_blank" className='text-[#007EA7] hover:underline'>LinkedIn</a>.
-      </p>
-    </>
+      
+      <div className='text-center mt-16'>
+        <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 max-w-2xl mx-auto shadow-xl">
+          <p className='text-lg lg:text-xl text-gray-700 leading-relaxed'>
+            For more details about my experience, please reach out for my CV via{' '}
+            <a 
+              href="https://www.linkedin.com/in/benworsley/" 
+              target="_blank" 
+                              className='text-sky-500 hover:text-cyan-500 font-semibold hover:underline transition-colors duration-300'
+            >
+              LinkedIn
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -6,6 +6,7 @@ import robot from "./robotdisplay.png"
 import github from "./github.png"
 import aoc from "./aoc.png"
 import enterprise from "./musicenterprise.png"
+import techassessaiVideo from "./techassessai_shortdemo.mp4"
 
 export { 
     memoji,
@@ -15,5 +16,6 @@ export {
     robot,
     github,
     aoc,
-    enterprise
+    enterprise,
+    techassessaiVideo
 };

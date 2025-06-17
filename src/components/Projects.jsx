@@ -12,15 +12,15 @@ const projectDefinitions = [
       tags: [
         {
           name: "python",
-          color: "text-[#E6272A]",
+          color: "text-red-500",
         },
         {
           name: "chatgpt",
-          color: "text-[#E6272A]",
+          color: "text-sky-500",
         },
         {
           name: "elevenlabsai",
-          color: "text-[#E6272A]",
+          color: "text-blue-500",
         },
       ],
       image: frenchai,
@@ -33,7 +33,7 @@ const projectDefinitions = [
       tags: [
         {
           name: "Go",
-          color: "text-[#E6272A]",
+          color: "text-cyan-500",
         }
       ],
       image: aoc,
@@ -42,11 +42,11 @@ const projectDefinitions = [
     {
       name: "Music Enterprise",
       description:
-        "I made this to provide an example of an enterprise-like codebase with regards to OO design and styles of tests to my friends who do not have much experience working in large codebases.",
+        "I made this to provide an example of OO design my colleagues new to coding.",
       tags: [
         {
           name: "java",
-          color: "text-[#E6272A]",
+          color: "text-orange-500",
         },
       ],
       image: enterprise,
@@ -59,19 +59,19 @@ const projectDefinitions = [
       tags: [
         {
           name: "React",
-          color: "text-[#E6272A]",
+          color: "text-blue-500",
         },
         {
           name: "Three.js",
-          color: "text-[#E6272A]",
+          color: "text-sky-500",
         },
         {
           name: "TailwindCSS",
-          color: "text-[#E6272A]"
+          color: "text-purple-500"
         },
         {
           name: "Blender",
-          color: "text-[#E6272A]",
+          color: "text-yellow-500",
         },
       ],
       image: robot,
@@ -82,38 +82,56 @@ const projectDefinitions = [
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
     <motion.div 
-      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-      className='w-full flex justify-center mt-6'
+      variants={fadeIn("up", "spring", index * 0.2, 0.75)}
+      className='w-full'
     >
-      <div
-        className='bg-gradient-to-br from-[#cfe8d9] to-[#A9D8F7] mx-0 md:mx-6 p-5 rounded-2xl sm:w-[360px] w-full'
-      >
-        <div className='relative w-full sm:h-[230px] h-[280px]'>
-          <img
-            src={image}
-            alt={name}
-            className='w-full h-full object-cover rounded-2xl'
-          />
-          <div className='absolute inset-0 flex justify-end m-3'>
-            <div 
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='bg-[#6b6c6b] w-9 h-9 rounded-full flex justify-center items-center cursor-pointer'  
-            >
-              <img src={github} alt="github" className='w-10/12 h-10/12 object-contain'/>
-            </div>            
-          </div>  
-        </div>
-        <div className='mt-5'>
-          <h3 className='text-[#121212] font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-        </div>
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
+      <div className='group relative w-full max-w-sm mx-auto'>
+        {/* Glow effect */}
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-400 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+        
+        {/* Main card */}
+        <div className='relative backdrop-blur-md bg-white/60 border border-white/30 rounded-3xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] w-full'>
+          <div className='relative w-full h-56 mb-6 overflow-hidden rounded-2xl'>
+            <img
+              src={image}
+              alt={name}
+              className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
+            />
+            
+            {/* Overlay gradient */}
+            <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+            
+            {/* GitHub button */}
+            <div className='absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+              <button 
+                onClick={() => window.open(source_code_link, "_blank")}
+                className='backdrop-blur-md bg-white/80 hover:bg-white/90 w-12 h-12 rounded-full flex justify-center items-center cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110'  
+              >
+                <img src={github} alt="github" className='w-6 h-6 object-contain'/>
+              </button>            
+            </div>  
+          </div>
+          
+          <div className='space-y-4'>
+            <h3 className='text-gray-800 font-bold text-xl lg:text-2xl group-hover:text-sky-500 transition-colors duration-300'>
+              {name}
+            </h3>
+            <p className='text-gray-600 text-sm lg:text-base leading-relaxed'>
+              {description}
             </p>
-          ))}
-        </div>  
+            
+            <div className='flex flex-wrap gap-2 pt-2'>
+              {tags.map((tag) => (
+                <span 
+                  key={tag.name} 
+                  className={`px-3 py-1 text-xs lg:text-sm font-semibold ${tag.color} bg-white/60 backdrop-blur-sm rounded-full border border-white/30 hover:scale-105 transition-transform duration-200`}
+                >
+                  #{tag.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -121,25 +139,35 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
 
 const Projects = () => {
     return (
-      <>
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#7defaae9] to-[#007EA7] md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
-          My Projects
-        </h2>
-        <div className='w-full flex'>
-          <p className='mt-30 text-[17px] leading-[30px]'>
+      <div className="relative w-full">
+        {/* Background decoration */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-1/4 left-0 w-40 h-40 bg-gradient-to-r from-sky-300 to-cyan-300 rounded-full opacity-20 blur-2xl"></div>
+          <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-gradient-to-r from-blue-300 to-sky-300 rounded-full opacity-20 blur-2xl"></div>
+        </div>
+        
+        <div className="text-center mb-12">
+          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-400 md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-bold mb-4">
+            Short Projects
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
+          <p className='text-gray-600 text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto'>
             The following are side projects I've made with the intention of learning a new technology or just to have a little fun.
           </p>  
         </div>
-        <div className='grid md:grid-cols-2 lg:grid-cols-3'>
-          {projectDefinitions.map((project, index) => (
-            <ProjectCard 
-              key={`project-${index}`} 
-              index={index}
-              {...project}
-            />
-          ))}
+        
+        <div className='w-full max-w-7xl mx-auto px-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12 place-items-center'>
+            {projectDefinitions.map((project, index) => (
+              <ProjectCard 
+                key={`project-${index}`} 
+                index={index}
+                {...project}
+              />
+            ))}
+          </div>
         </div>
-      </>
+      </div>
   );
 };
 

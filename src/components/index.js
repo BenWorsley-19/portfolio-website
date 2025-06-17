@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Projects from './Projects';
 import About from './About';
 import Experience from './Experience';
+import TechAssessAI from './TechAssessAI';
 
 
 export {
@@ -11,4 +12,5 @@ export {
   Projects,
   About,
   Experience,
+  TechAssessAI,
 }
