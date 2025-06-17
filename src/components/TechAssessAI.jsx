@@ -49,14 +49,12 @@ const TechAssessAI = () => {
           >
             <div className="space-y-4">
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                AI-Powered Technical Assessment Platform
+                AI-Powered System Design Interviewer
               </h3>
               
               <p className="text-gray-600 text-lg leading-relaxed">
-                TechAssessAI is an innovative platform that leverages artificial intelligence to 
-                revolutionize technical interviews and assessments. The platform provides 
-                automated code evaluation, real-time feedback, and comprehensive analysis 
-                of coding solutions.
+                A platform to practice for technical interviews through diagramming and discussing technical solutions. 
+                The AI will guide the user through the interview process, providing feedback and suggestions for improvement.
               </p>
               
               <div className="space-y-3">
@@ -64,19 +62,15 @@ const TechAssessAI = () => {
                 <ul className="text-gray-600 space-y-2">
                   <li className="flex items-start">
                     <span className="text-sky-500 mr-2">•</span>
-                    Real-time code analysis and feedback
+                    Conversational AI Interviewer
                   </li>
                   <li className="flex items-start">
                     <span className="text-sky-500 mr-2">•</span>
-                    Automated test case generation
+                    Diagram and discuss the solution
                   </li>
                   <li className="flex items-start">
                     <span className="text-sky-500 mr-2">•</span>
-                    Performance metrics and optimization suggestions
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-sky-500 mr-2">•</span>
-                    Multi-language support for various programming languages
+                    Performance feedback
                   </li>
                 </ul>
               </div>
@@ -85,26 +79,15 @@ const TechAssessAI = () => {
                 <span className="px-4 py-2 text-sm font-semibold text-sky-600 bg-sky-100 rounded-full border border-sky-200">
                   #AI/ML
                 </span>
-                <span className="px-4 py-2 text-sm font-semibold text-cyan-600 bg-cyan-100 rounded-full border border-cyan-200">
-                  #React
-                </span>
                 <span className="px-4 py-2 text-sm font-semibold text-sky-600 bg-sky-100 rounded-full border border-sky-200">
-                  #Node.js
+                  #Langchain
                 </span>
                 <span className="px-4 py-2 text-sm font-semibold text-orange-600 bg-orange-100 rounded-full border border-orange-200">
                   #Python
                 </span>
-              </div>
-
-              {/* GitHub Link Button */}
-              <div className="pt-6">
-                <button 
-                  onClick={() => window.open("https://github.com/yourusername/techassessai", "_blank")}
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                >
-                  <img src={github} alt="github" className="w-5 h-5" />
-                  View Source Code
-                </button>
+                <span className="px-4 py-2 text-sm font-semibold text-cyan-600 bg-cyan-100 rounded-full border border-cyan-200">
+                  #React
+                </span>
               </div>
             </div>
           </motion.div>

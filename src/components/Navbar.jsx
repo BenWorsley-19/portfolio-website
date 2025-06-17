@@ -5,16 +5,12 @@ import { menu, close } from '../assets';
 
 const navLinks = [
     {
-      id: "about",
-      title: "About",
+      id: "techassessai",
+      title: "Featured",
     },
     {
       id: "projects",
-      title: "Projects",
-    },
-    {
-      id: "experience",
-      title: "Experience",
+      title: "Other",
     }
 ];
 
