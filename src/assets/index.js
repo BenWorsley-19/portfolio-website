@@ -1,4 +1,4 @@
-import memoji from "./memoji.png";
+import memoji from "./memoji2.png";
 import close from "./close.svg"
 import menu from "./menu.svg"
 import frenchai from "./frenchaidisplay.svg"
@@ -7,6 +7,7 @@ import github from "./github.png"
 import aoc from "./aoc.png"
 import enterprise from "./musicenterprise.png"
 import techassessaiVideo from "./techassessai_shortdemo.mp4"
+import interviewAssistant from "./interview-assistant.png"
 
 export { 
     memoji,
@@ -17,5 +18,6 @@ export {
     github,
     aoc,
     enterprise,
-    techassessaiVideo
+    techassessaiVideo,
+    interviewAssistant
 };

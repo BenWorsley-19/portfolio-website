@@ -36,7 +36,7 @@ const Hero = () => {
                             <img 
                                 src={memoji} 
                                 alt="Ben Worsley" 
-                                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[280px] h-[280px] lg:w-[340px] lg:h-[340px] transition-transform duration-300 group-hover:scale-105"
+                                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[240px] h-[240px] lg:w-[300px] lg:h-[300px] transition-transform duration-300 group-hover:scale-105"
                             />
                         </div>
                     </div>

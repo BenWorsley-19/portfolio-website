@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { Hero, Navbar, Projects, TechAssessAI } from './components';
+import { Hero, Navbar, Projects, TechAssessAI, EvalynAI } from './components';
 
 const App = () => {
 
@@ -18,6 +18,7 @@ const App = () => {
         <div className='relative z-10 container mt-20 mx-auto py-6 px-6 lg:px-12 space-y-16 lg:space-y-20'>
           <Hero />
           <TechAssessAI />
+          <EvalynAI />
           <Projects />
         </div>
       </div>
