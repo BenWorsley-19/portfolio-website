@@ -14,7 +14,7 @@ const Hero = () => {
                         sequence={[  
                             "AI Engineer",
                             1300,
-                            "LLM Ops",
+                            "Software Engineer",
                             1300,
                             "Tech Lead",
                             1300,
