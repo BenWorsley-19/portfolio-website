@@ -25,7 +25,7 @@ const Hero = () => {
           <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
             <span className="text-neutral-500">Hey, I&apos;m Ben.</span>
             <br />
-            <span className="text-gradient animate-gradient-x">
+            <span className="text-gradient animate-gradient-x block min-h-[6.5rem] sm:min-h-[8rem] lg:min-h-[9.5rem] xl:min-h-[11.75rem]">
               <TypeAnimation
                 sequence={[
                   "AI Engineer",
@@ -64,6 +64,14 @@ const Hero = () => {
               className="inline-flex items-center gap-2 rounded-full border border-white/12 px-6 py-3 text-sm font-semibold text-neutral-200 transition-all duration-300 hover:border-white/30 hover:bg-white/5"
             >
               GitHub ↗
+            </a>
+            <a
+              href="https://www.linkedin.com/in/benworsley/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/12 px-6 py-3 text-sm font-semibold text-neutral-200 transition-all duration-300 hover:border-white/30 hover:bg-white/5"
+            >
+              LinkedIn ↗
             </a>
           </div>
 

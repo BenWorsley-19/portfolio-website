@@ -13,9 +13,9 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react/jsx-no-target-blank': 'off',
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    // This codebase doesn't use prop-types; the HOC (SectionWrapper) pattern
+    // also produces anonymous component exports that trip the fast-refresh rule.
+    'react/prop-types': 'off',
+    'react-refresh/only-export-components': 'off',
   },
 }
