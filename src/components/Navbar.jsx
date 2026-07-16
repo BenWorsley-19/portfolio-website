@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { menu, close } from '../assets';
 
 const navLinks = [
-    {
-      id: "techassessai",
-      title: "Featured",
-    },
-    {
-      id: "projects",
-      title: "Other",
-    }
+  { id: "techassessai", title: "Featured" },
+  { id: "projects", title: "Projects" },
 ];
 
 const Navbar = () => {
@@ -19,65 +13,83 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="sm:px-16 px-6 w-full flex items-center py-4 fixed backdrop-blur-md bg-white/70 border-b border-white/20 shadow-lg top-0 z-20">
-      <div className='container flex justify-between items-center mx-auto'>
+    <nav className="fixed top-0 z-30 w-full border-b border-white/5 bg-ink-950/70 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <Link
           to="/"
-          className='group'
+          className="group flex items-center gap-3"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-[#121212] text-[18px] font-bold cursor-pointer">BW</p>
-        </Link> 
-        <ul className="list-none hidden sm:flex flex-row gap-8">
-          {
-            navLinks.map((link) => (
-              <li
-                key={link.id}
-                className={`${active === link.title ? 'text-sky-500' : 'text-gray-700'} hover:text-sky-500 text-lg font-medium cursor-pointer transition-all duration-300 relative group`}
-                onClick={() => setActive(link.title)}
-              >
-                <a href={`#${link.id}`} className="relative z-10">{link.title}</a>
-                                  <div className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-sky-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-              </li>
-            ))
-          }
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 font-display text-sm font-bold tracking-tight text-neutral-100 transition-colors group-hover:border-accent/50">
+            BW
+          </span>
+          <span className="hidden font-mono text-xs tracking-widest text-neutral-400 sm:inline">
+            ben&nbsp;worsley
+          </span>
+        </Link>
+
+        <ul className="hidden list-none flex-row items-center gap-8 sm:flex">
+          {navLinks.map((link) => (
+            <li
+              key={link.id}
+              className={`${active === link.title ? 'text-neutral-50' : 'text-neutral-400'} text-sm font-medium transition-colors duration-300 hover:text-neutral-50`}
+              onClick={() => setActive(link.title)}
+            >
+              <a href={`#${link.id}`} className="font-mono text-xs tracking-widest uppercase">
+                {link.title}
+              </a>
+            </li>
+          ))}
+          <li>
+            <span className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-cyan opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-cyan" />
+              </span>
+              <span className="font-mono text-[0.65rem] tracking-widest uppercase text-neutral-300">
+                Available
+              </span>
+            </span>
+          </li>
         </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <div 
-            className="p-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 cursor-pointer hover:bg-white/30 transition-all duration-300"
+
+        <div className="flex flex-1 items-center justify-end sm:hidden">
+          <button
+            className="rounded-lg border border-white/10 bg-white/5 p-2 transition-colors hover:bg-white/10"
             onClick={() => setToggle(!toggle)}
+            aria-label="Toggle menu"
           >
-            <img 
-              src={toggle ? close : menu} 
-              alt="menu" 
-              className='w-6 h-6 object-contain'
+            <img
+              src={toggle ? close : menu}
+              alt="menu"
+              className="h-5 w-5 object-contain invert"
             />
-          </div>
-          
-          <div className={`${!toggle ? 'hidden' : 'flex'} p-6 backdrop-blur-md bg-white/80 border border-white/30 shadow-xl absolute top-20 right-4 min-w-[180px] z-10 rounded-2xl`}>
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-              {
-                navLinks.map((link) => (
-                  <li
+          </button>
+
+          <div
+            className={`${!toggle ? 'hidden' : 'flex'} absolute right-4 top-20 z-20 min-w-[200px] flex-col rounded-2xl border border-white/10 bg-ink-850/95 p-6 backdrop-blur-xl`}
+          >
+            <ul className="flex list-none flex-col items-start gap-5">
+              {navLinks.map((link) => (
+                <li
                   key={link.id}
-                  className={`${active === link.title ? 'text-sky-500' : 'text-gray-700'} font-medium cursor-pointer text-lg hover:text-sky-500 transition-colors duration-300`}
+                  className="font-mono text-xs uppercase tracking-widest text-neutral-300 transition-colors hover:text-neutral-50"
                   onClick={() => {
                     setActive(link.title);
-                    setToggle(!toggle);
+                    setToggle(false);
                   }}
                 >
                   <a href={`#${link.id}`}>{link.title}</a>
                 </li>
-                ))
-              }
+              ))}
             </ul>
           </div>
         </div>
       </div>
-    </nav>  
+    </nav>
   );
 };
 

@@ -1,100 +1,81 @@
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '../hoc';
 import { fadeIn, textVariant } from '../utils/motion';
-import { interviewAssistant, github } from '../assets';
+import { interviewAssistant } from '../assets';
+
+const features = [
+  "Real-time interviewer coaching",
+  "Dynamic question suggestions",
+  "Candidate evaluation insights",
+  "Interview feedback and analysis",
+];
+
+const tags = ["AI/ML", "Gemini", "React", "Python"];
 
 const EvalynAI = () => {
   return (
-    <div className="relative w-full">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-0 w-40 h-40 bg-gradient-to-r from-purple-300 to-pink-300 rounded-full opacity-20 blur-2xl"></div>
-        <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-gradient-to-r from-indigo-300 to-purple-300 rounded-full opacity-20 blur-2xl"></div>
-      </div>
-      
-      <motion.div variants={textVariant()}>
-        <div className="text-center mb-12">
-          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-400 md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-bold mb-4">
-            Featured Project: EvalynAI
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6"></div>
-        </div>
+    <div className="relative w-full py-16 lg:py-24">
+      <motion.div variants={textVariant()} className="mb-14 text-right">
+        <p className="eyebrow mb-4 flex items-center justify-end gap-3">
+          Featured Project
+          <span className="h-px w-10 bg-white/15" />
+          <span className="text-accent-violet">02</span>
+        </p>
+        <h2 className="font-display text-4xl font-bold tracking-tight text-neutral-50 sm:text-5xl lg:text-6xl">
+          Evalyn<span className="text-accent-violet">AI</span>
+        </h2>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image Section */}
-          <motion.div
-            variants={fadeIn("right", "tween", 0.2, 1)}
-            className="relative group"
-          >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-            <div className="relative backdrop-blur-md bg-white/60 border border-white/30 rounded-3xl p-4 shadow-2xl">
-              <img
-                src={interviewAssistant}
-                alt="EvalynAI Interface"
-                className="w-full h-auto rounded-2xl shadow-lg object-cover"
-              />
-            </div>
-          </motion.div>
+      <div className="grid items-center gap-12 lg:grid-cols-2">
+        {/* Copy */}
+        <motion.div variants={fadeIn("right", "tween", 0.2, 1)} className="order-2 lg:order-1">
+          <h3 className="text-2xl font-semibold text-neutral-50 lg:text-3xl">
+            AI Interview Assistant &amp; Coach
+          </h3>
+          <p className="mt-5 text-lg leading-relaxed text-neutral-400">
+            An intelligent assistant that helps interviewers run better
+            interviews. EvalynAI offers real-time advice, suggested questions,
+            and guidance for thorough, consistent candidate evaluation.
+          </p>
 
-          {/* Description Section */}
-          <motion.div
-            variants={fadeIn("left", "tween", 0.2, 1)}
-            className="space-y-6"
-          >
-            <div className="space-y-4">
-              <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                AI Interview Assistant & Coach
-              </h3>
-              
-              <p className="text-gray-600 text-lg leading-relaxed">
-                An intelligent AI assistant and coach designed to help interviewers conduct better interviews. 
-                EvalynAI provides real-time advice, suggested questions, and guidance to ensure thorough and effective candidate evaluation.
-              </p>
-              
-              <div className="space-y-3">
-                <h4 className="text-xl font-semibold text-gray-800">Key Features:</h4>
-                <ul className="text-gray-600 space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    Real-time interviewer coaching
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    Dynamic question suggestions
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    Candidate evaluation insights
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    Interview feedback and analysis
-                  </li>
-                </ul>
-              </div>
+          <ul className="mt-8 space-y-3">
+            {features.map((f) => (
+              <li key={f} className="flex items-start gap-3 text-neutral-300">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-violet" />
+                {f}
+              </li>
+            ))}
+          </ul>
 
-              <div className="flex flex-wrap gap-3 pt-4">
-                <span className="px-4 py-2 text-sm font-semibold text-purple-600 bg-purple-100 rounded-full border border-purple-200">
-                  #AI/ML
-                </span>
-                <span className="px-4 py-2 text-sm font-semibold text-pink-600 bg-pink-100 rounded-full border border-pink-200">
-                  #Gemini
-                </span>
-                <span className="px-4 py-2 text-sm font-semibold text-indigo-600 bg-indigo-100 rounded-full border border-indigo-200">
-                  #React
-                </span>
-                <span className="px-4 py-2 text-sm font-semibold text-cyan-600 bg-cyan-100 rounded-full border border-cyan-200">
-                  #Python
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {tags.map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-accent-violet/25 bg-accent-violet/5 px-3.5 py-1.5 font-mono text-xs text-accent-violet"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Media */}
+        <motion.div
+          variants={fadeIn("left", "tween", 0.2, 1)}
+          className="group relative order-1 lg:order-2"
+        >
+          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-accent-violet/40 to-accent/20 opacity-40 blur-2xl transition-opacity duration-500 group-hover:opacity-70" />
+          <div className="surface relative overflow-hidden rounded-3xl p-2">
+            <img
+              src={interviewAssistant}
+              alt="EvalynAI interface"
+              className="w-full rounded-2xl object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default SectionWrapper(EvalynAI, "evalynai"); 
+export default SectionWrapper(EvalynAI, "evalynai");

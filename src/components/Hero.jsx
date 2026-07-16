@@ -1,75 +1,109 @@
-import { memoji } from '../assets';
+import { motion } from 'framer-motion';
 import { TypeAnimation } from "react-type-animation";
 
+import { memoji } from '../assets';
+
+const badges = [
+  { icon: "🦄", label: "2nd engineer at a UK unicorn" },
+  { icon: "🚀", label: "0 → 1 product builder" },
+  { icon: "🌟", label: "Team builder & mentor" },
+];
 
 const Hero = () => {
-    return (
-        <div className='min-h-[85vh] flex flex-col justify-center py-12 lg:py-0'>
-            <div className="grid grid-cols-1 lg:grid-cols-12 lg:my-12 mb-8 lg:mb-12 gap-8">
-                <div className="lg:col-span-7 place-self-center mb-8 lg:mb-12 text-center sm:text-left">
-                    <h1 className="mb-6 text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-extrabold leading-tight">
-                        <span className='text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-cyan-400 animate-gradient-x'>Hello, I&apos;m{" "}</span>
-                        <br></br>
-                        <TypeAnimation
-                        sequence={[  
-                            "AI Engineer",
-                            1300,
-                            "Full-Stack",
-                            1300,
-                            "Tech Lead",
-                            1300,
-                        ]}
-                        wrapper="span"
-                        speed={50}
-                        repeat={Infinity}
-                        className='text-gray-800 drop-shadow-sm'
-                        />
-                    </h1>
-                    <p className="text-lg text-gray-600 sm:text-xl lg:text-2xl max-w-3xl leading-relaxed font-medium">
-                        I'm Ben and here you'll find some projects I've delivered outside of my day job!
-                    </p>
-                </div>
-                <div className="lg:col-span-5 place-self-center mt-4 lg:mt-0">
-                    <div className="relative group">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-sky-400 via-cyan-500 to-blue-400 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-            <div className="relative rounded-full bg-gradient-to-br from-sky-100 via-white to-cyan-100 w-[320px] h-[320px] lg:w-[400px] lg:h-[400px] shadow-2xl border border-white/20 backdrop-blur-sm">
-                            <img 
-                                src={memoji} 
-                                alt="Ben Worsley" 
-                                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[240px] h-[240px] lg:w-[300px] lg:h-[300px] transition-transform duration-300 group-hover:scale-105"
-                            />
-                        </div>
-                    </div>
-                </div>
+  return (
+    <section className="flex min-h-screen flex-col justify-center pt-28 pb-16 lg:pt-32">
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+        {/* Copy */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center lg:col-span-7 lg:text-left"
+        >
+          <p className="eyebrow mb-6">Portfolio — Side Projects</p>
+
+          <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+            <span className="text-neutral-500">Hey, I&apos;m Ben.</span>
+            <br />
+            <span className="text-gradient animate-gradient-x">
+              <TypeAnimation
+                sequence={[
+                  "AI Engineer",
+                  1600,
+                  "Full-Stack Dev",
+                  1600,
+                  "Tech Lead",
+                  1600,
+                ]}
+                wrapper="span"
+                speed={45}
+                repeat={Infinity}
+                cursor
+              />
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-neutral-400 lg:mx-0">
+            I build AI-powered products end to end. Here are a few projects
+            I&apos;ve shipped outside of my day job.
+          </p>
+
+          {/* CTAs */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+            <a
+              href="#techassessai"
+              className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-accent-soft hover:shadow-glow"
+            >
+              View my work
+              <span className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
+            </a>
+            <a
+              href="https://github.com/BenWorsley-19"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/12 px-6 py-3 text-sm font-semibold text-neutral-200 transition-all duration-300 hover:border-white/30 hover:bg-white/5"
+            >
+              GitHub ↗
+            </a>
+          </div>
+
+          {/* Badges */}
+          <div className="mt-12 flex flex-wrap justify-center gap-3 lg:justify-start">
+            {badges.map((b) => (
+              <span
+                key={b.label}
+                className="surface surface-hover inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-neutral-300"
+              >
+                <span aria-hidden="true">{b.icon}</span>
+                {b.label}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Avatar */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+          className="flex justify-center lg:col-span-5"
+        >
+          <div className="relative animate-float">
+            {/* Glow ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent via-accent-violet to-accent-cyan opacity-30 blur-3xl" />
+            <div className="relative flex h-[300px] w-[300px] items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent lg:h-[380px] lg:w-[380px]">
+              <div className="absolute inset-4 rounded-full border border-white/5" />
+              <img
+                src={memoji}
+                alt="Ben Worsley"
+                className="relative h-[220px] w-[220px] object-contain drop-shadow-2xl lg:h-[280px] lg:w-[280px]"
+              />
             </div>
-            <div className='flex flex-wrap gap-4 md:gap-6 lg:gap-8 lg:pt-12 items-center justify-center'>
-                <div className='group relative'>
-                    <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-300"></div>
-                    <div className='relative backdrop-blur-md bg-white/70 border border-white/30 shadow-xl rounded-2xl p-6 w-80 lg:w-96 transform hover:scale-105 transition-all duration-300'>
-                        <p className='text-center text-lg lg:text-xl text-gray-700 font-semibold'>
-                            🦄 2nd engineer at UK Unicorn
-                        </p>
-                    </div>
-                </div>
-                <div className='group relative'>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-sky-400 rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-300"></div>
-                    <div className='relative backdrop-blur-md bg-white/70 border border-white/30 shadow-xl rounded-2xl p-6 w-80 lg:w-96 transform hover:scale-105 transition-all duration-300'>
-                        <p className='text-center text-lg lg:text-xl text-gray-700 font-semibold'>
-                            🚀 0→1 Product Builder
-                        </p>
-                    </div>
-                </div>
-                <div className='group relative'>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-400 rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-300"></div>
-                    <div className='relative backdrop-blur-md bg-white/70 border border-white/30 shadow-xl rounded-2xl p-6 w-80 lg:w-96 transform hover:scale-105 transition-all duration-300'>
-                        <p className='text-center text-lg lg:text-xl text-gray-700 font-semibold'>
-                        🌟 Team Builder & Mentor
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
